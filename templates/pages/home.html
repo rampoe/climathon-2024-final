@@ -61,7 +61,7 @@
           </i>
         </span>
         <h3>Make A Donation</h3>
-        <a class="link style1" href="{% url "home" %}">
+        <a class="link style1" href="{% url "donation" %}">
           Donate Us
           <i class="flaticon-right-arrow">
           </i>
@@ -629,10 +629,10 @@
     <div class="container">
       <div class="section-title style1 text-center mb-40">
         <span>
-          Our Volunteer
+          Our Team &hearts;
           <img height="" width="" alt="Image" src="{% static "img/section-shape.png" %}" />
         </span>
-        <h2>Our Experts Volunteer</h2>
+        <h2>We are Despicable 3!</h2>
       </div>
       <div class="team-slider-two owl-carousel">
         <div class="team-card style2"
@@ -813,7 +813,7 @@
           <button type="button">Other</button>
         </li>
       </ul>
-      <button class="btn style2" type="submit">Donate Now</button>
+      <a href="{% url "donation" %}"><button class="btn style2" type="submit">Donate Now</button></a>
     </div>
   </div>
   <!-- CTA Section Start -->
