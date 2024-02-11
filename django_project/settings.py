@@ -189,3 +189,7 @@ JAZZMIN_SETTINGS = {
     "changeform_format": "tabs",
     "related_modal_active": True,
 }
+
+
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"

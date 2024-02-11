@@ -18,3 +18,12 @@ def article_list(request):
         "pages/article_list.html",
         {"articles": articles},
     )
+
+
+def article_detail(request, pk):
+    article = models.Article.objects.get(pk=pk)
+    return render(
+        request,
+        "pages/article_detail.html",
+        {"article": article},
+    )
