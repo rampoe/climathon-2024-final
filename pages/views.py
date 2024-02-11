@@ -78,3 +78,11 @@ def profile_page(request):
     return render(
         request, "account/profile.html", {"user": user, "quiz_stats": quiz_stats}
     )
+
+
+def contact_page(request):
+    return render(request, "pages/contact.html")
+
+
+def donation_page(request):
+    return render(request, "pages/donation.html")
