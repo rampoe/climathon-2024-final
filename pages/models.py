@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from accounts.models import CustomUser
+
 
 class Article(models.Model):
     image = models.ImageField(upload_to="article_images/", blank=True, null=True)
@@ -30,3 +32,13 @@ class Answer(models.Model):
 
     def __str__(self):
         return f"{self.question.text} ({self.text})"
+
+
+class UserQuizStats(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    score = models.IntegerField()
+    # Add any additional fields you might need, e.g., date_taken
+
+    def __str__(self):
+        return f"{self.user.username} - {self.quiz.title} - Score: {self.score}"

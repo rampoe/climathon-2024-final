@@ -1,16 +1,17 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 
 from . import models
 from .models import Answer, Question, Quiz
 
 
+@login_required
 def submit_quiz(request, quiz_id):
     if request.method == "POST":
         quiz = get_object_or_404(Quiz, pk=quiz_id)
+        user = request.user
         score = 0
-        questions = (
-            quiz.question_set.all()
-        )  # Add this line to get the questions queryset
+        questions = quiz.question_set.all()
 
         for question in questions:
             answer_id = request.POST.get(f"question_{question.id}")
@@ -18,6 +19,10 @@ def submit_quiz(request, quiz_id):
                 selected_answer = get_object_or_404(Answer, pk=answer_id)
                 if selected_answer.is_correct:
                     score += 1
+
+        # Save user quiz statistics
+        user_quiz_stats = models.UserQuizStats(user=user, quiz=quiz, score=score)
+        user_quiz_stats.save()
 
         return render(
             request,
