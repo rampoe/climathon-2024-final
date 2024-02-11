@@ -2,15 +2,15 @@
 
 {% block content %}
   <div class="hero-wrap container ptb-100">
-    <div class="hero-wrap">
-      <h2>Quizzes</h2>
-      <ul>
-        {% for quiz in quizzes %}
-          <li>
+    <h2>Quizzes</h2>
+    <ul>
+      {% for quiz in quizzes %}
+        <li>
+          <h3 style="color: blue;">
             <a href="{% url 'quiz_detail' quiz.id %}">{{ quiz.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+          </h3>
+        </li>
+      {% endfor %}
+    </ul>
   </div>
 {% endblock content %}
