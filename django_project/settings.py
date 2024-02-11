@@ -39,6 +39,10 @@ INSTALLED_THIRD_PARTY_APPS = [
 INSTALLED_LOCAL_APPS = [
     "accounts",
     "pages",
+    # "quiz",
+    # "multichoice",
+    # "true_false",
+    # "essay",
 ]
 
 INSTALLED_APPS = (
