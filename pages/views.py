@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 
 from . import models
-from .models import Answer, Question, Quiz
+from .models import Answer, Question, Quiz, UserQuizStats
 
 
 @login_required
@@ -69,4 +69,12 @@ def article_detail(request, pk):
         request,
         "pages/article_detail.html",
         {"article": article},
+    )
+
+
+def profile_page(request):
+    user = request.user
+    quiz_stats = UserQuizStats.objects.filter(user=user)
+    return render(
+        request, "account/profile.html", {"user": user, "quiz_stats": quiz_stats}
     )
