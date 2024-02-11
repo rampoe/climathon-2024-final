@@ -1,8 +1,12 @@
-<h2>Quizzes</h2>
-<ul>
-  {% for quiz in quizzes %}
-    <li>
-      <a href="{% url 'quiz_detail' quiz.id %}">{{ quiz.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+{% extends "_base.html" %}
+
+{% block content %}
+  <h2>Quizzes</h2>
+  <ul>
+    {% for quiz in quizzes %}
+      <li>
+        <a href="{% url 'quiz_detail' quiz.id %}">{{ quiz.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

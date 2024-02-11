@@ -8,15 +8,22 @@ def submit_quiz(request, quiz_id):
     if request.method == "POST":
         quiz = get_object_or_404(Quiz, pk=quiz_id)
         score = 0
+        questions = (
+            quiz.question_set.all()
+        )  # Add this line to get the questions queryset
 
-        for question in quiz.question_set.all():
+        for question in questions:
             answer_id = request.POST.get(f"question_{question.id}")
             if answer_id:
                 selected_answer = get_object_or_404(Answer, pk=answer_id)
                 if selected_answer.is_correct:
                     score += 1
 
-        return render(request, "quiz/quiz_result.html", {"quiz": quiz, "score": score})
+        return render(
+            request,
+            "quiz/quiz_result.html",
+            {"quiz": quiz, "score": score, "questions": questions},
+        )
 
     return redirect("quiz_list")
 
