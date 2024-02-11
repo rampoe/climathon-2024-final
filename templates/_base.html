@@ -15,17 +15,17 @@
     <meta content="" name="keywords" />
     <meta content="" name="description" />
     {% block css %}
-      <link href="css/bootstrap.min.css" rel="stylesheet" />
-      <link href="css/flaticon.css" rel="stylesheet" />
-      <link href="css/remixicon.css" rel="stylesheet" />
-      <link href="css/owl.carousel.min.css" rel="stylesheet" />
-      <link href="css/owl-theme-default-min.css" rel="stylesheet" />
-      <link href="css/odometer.min.css" rel="stylesheet" />
-      <link href="css/fancybox.css" rel="stylesheet" />
-      <link href="css/aos.css" rel="stylesheet" />
-      <link href="css/style.css" rel="stylesheet" />
-      <link href="css/responsive.css" rel="stylesheet" />
-      <link href="css/dark-theme.css" rel="stylesheet" />
+      <link href="{% static "assets/css/bootstrap.min.css" %}" rel="stylesheet" />
+      <link href="{% static "assets/css/flaticon.css" %}" rel="stylesheet" />
+      <link href="{% static "assets/css/remixicon.css" %}" rel="stylesheet" />
+      <link href="{% static "assets/css/owl.carousel.min.css" %}" rel="stylesheet" />
+      <link href="{% static "assets/css/owl-theme-default-min.css" %}" rel="stylesheet" />
+      <link href="{% static "assets/css/odometer.min.css" %}" rel="stylesheet" />
+      <link href="{% static "assets/css/fancybox.css" %}" rel="stylesheet" />
+      <link href="{% static "assets/css/aos.css" %}" rel="stylesheet" />
+      <link href="{% static "assets/css/style.css" %}" rel="stylesheet" />
+      <link href="{% static "assets/css/responsive.css" %}" rel="stylesheet" />
+      <link href="{% static "assets/css/dark-theme.css" %}" rel="stylesheet" />
     {% endblock css %}
   </head>
   <body>
@@ -89,15 +89,15 @@
                       </button>
                       <div class="dropdown-menu language-dropdown-menu">
                         <a class="dropdown-item" href="{% url "home" %}">
-                          <img width="" height="" alt="flag" src="{% static "img/uk.png" %}" />
+                          <img width="" height="" alt="flag" src="{% static "assets/img/uk.png" %}" />
                           Eng
                         </a>
                         <a class="dropdown-item" href="{% url "home" %}">
-                          <img width="" height="" alt="flag" src="{% static "img/china.png" %}" />
+                          <img width="" height="" alt="flag" src="{% static "assets/img/china.png" %}" />
                           简体中文
                         </a>
                         <a class="dropdown-item" href="{% url "home" %}">
-                          <img width="" height="" alt="flag" src="{% static "img/uae.png" %}" />
+                          <img width="" height="" alt="flag" src="{% static "assets/img/uae.png" %}" />
                           العربيّة
                         </a>
                       </div>
@@ -138,12 +138,8 @@
           <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
               <a class="navbar-brand" href="{% url "home" %}">
-                <img width="" height="" alt="logo"
-                     class="logo-light"
-                     src="{% static "img/logo.png" %}" />
-                <img width="" height="" alt="logo"
-                     class="logo-dark"
-                     src="{% static "img/logo-white.png" %}" />
+                <img width="" height="" alt="logo" class="logo-light" src="{% static "assets/img/logo.png" %}" />
+                <img width="" height="" alt="logo" class="logo-dark" src="{% static "assets/img/logo-white.png" %}" />
               </a>
               <div class="collapse navbar-collapse main-menu-wrap"
                    id="navbarSupportedContent">
@@ -160,26 +156,9 @@
                       <i class="ri-add-line">
                       </i>
                     </a>
-                    <ul class="dropdown-menu">
-                      <li class="nav-item">
-                        <a class="nav-link" href="{% url "home" %}">Home One</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="{% url "home" %}">Home Two</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="{% url "home" %}">Home Three</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="{% url "home" %}">Home Four</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link active" href="{% url "home" %}">Home Five</a>
-                      </li>
-                    </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url "home" %}">About Us</a>
+                    <a class="nav-link" href="{% url "about" %}">About Us</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url "home" %}">
@@ -189,13 +168,13 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li class="nav-item">
-                        <a class="nav-link" href="{% url "home" %}">Project One</a>
+                        <a class="nav-link" href="{% url "quiz_list" %}">Quizes</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{% url "home" %}">Project Two</a>
+                        <a class="nav-link" href="{% url "home" %}">Games</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{% url "home" %}">Single Project</a>
+                        <a class="nav-link" href="{% url "home" %}">Coming soon...</a>
                       </li>
                     </ul>
                   </li>
@@ -272,47 +251,26 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url "home" %}">
-                      Blog
+                    <a class="nav-link" href="{% url "profile" %}">
+                      Profile
                       <i class="ri-add-line">
                       </i>
                     </a>
                     <ul class="dropdown-menu">
                       <li class="nav-item">
                         <a class="nav-link" href="{% url "home" %}">
-                          Blog Layout
+                          My profile
                           <i class="ri-add-line">
                           </i>
                         </a>
-                        <ul class="dropdown-menu">
-                          <li class="nav-item">
-                            <a class="nav-link" href="{% url "home" %}">Blog Grid</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="{% url "home" %}">Blog Left Sidebar</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="{% url "home" %}">Blog Right Sidebar</a>
-                          </li>
-                        </ul>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="{% url "home" %}">
-                          Single Blog
+                          Change password
                           <i class="ri-add-line">
                           </i>
                         </a>
-                        <ul class="dropdown-menu">
-                          <li class="nav-item">
-                            <a class="nav-link" href="{% url "home" %}">Blog Details No Sidebar</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="{% url "home" %}">Blog Details Left Sidebar</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="{% url "home" %}">Blog Details Right Sidebar</a>
-                          </li>
-                        </ul>
+
                       </li>
                     </ul>
                   </li>
@@ -366,35 +324,27 @@
         </div>
       </header>
       <!-- Header Section End -->
-      <div class="container">
-        {% block content %}
-          <p>Default content...</p>
-        {% endblock content %}
-      </div>
+      {% block content %}
+        <p>Default content...</p>
+      {% endblock content %}
+
       <!-- Footer Section Start -->
       <footer class="footer-wrap">
         <div class="footer-top">
-          <img width="" height="" alt="Image"
-               class="footer-shape-one moveHorizontal"
-               src="{% static "img/footer-shape-2.png" %}" />
-          <img width="" height="" alt="Image"
-               class="footer-shape-two rotate"
-               src="{% static "img/sun-2.png" %}" />
-          <img width="" height="" alt="Image"
-               class="footer-shape-three flyLeft"
-               src="{% static "img/bird.html" %}" />
+          <img height="" width="" src="{% static "img/footer-shape-2.png" %}" alt="Image" class="footer-shape-one moveHorizontal">
+          <img height="" width="" src="{% static "img/footer-shape-3.png" %}" alt="Image" class="footer-shape-four moveHorizontal">
           <div class="container">
             <div class="row pt-100 pb-75">
               <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 pe-xl-5">
                 <div class="footer-widget">
-                  <a class="footer-logo" href="{% url "home" %}">
-                    <img width="" height="" alt="Image" src="{% static "img/logo-white.png" %}" />
+                  <a href="{% url "home" %}" class="footer-logo">
+                    <img height="" width="" src="{% static "assets/img/logo.png " %}" alt="Image">
                   </a>
                   <p class="comp-desc">
-                    Lorem ipsum dolor sit amet consc tetur adicing elit. Dolor emque dicta molest enim beatae ame consequ atur tempo pretium auctor nam.
+                    We are an educational platform dedicated to spreading knowledge about climate change and the environment.
                   </p>
                   <div class="newsletter-form">
-                    <input placeholder="Email Address" type="email" />
+                    <input type="email" placeholder="Email Address">
                     <button type="button">Subscribe Now</button>
                   </div>
                 </div>
@@ -421,12 +371,12 @@
                   </ul>
                 </div>
               </div>
-              <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+              <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 ">
                 <div class="footer-widget">
                   <h3 class="footer-widget-title">Other Pages</h3>
                   <ul class="footer-menu list-style">
                     <li>
-                      <a href="{% url "home" %}">About us</a>
+                      <a href="{% url "about" %}">About us</a>
                     </li>
                     <li>
                       <a href="{% url "home" %}">Our Team</a>
@@ -448,24 +398,19 @@
                   <h3 class="footer-widget-title">Official Info</h3>
                   <ul class="contact-info list-style">
                     <li>
-                      <i class="flaticon-pin">
-                      </i>
+                      <i class="flaticon-pin"></i>
                       <h6>Location</h6>
-                      <p>2767 Sunrise Street, NY 1002, USA</p>
+                      <p>Carbon Training Center</p>
                     </li>
                     <li>
-                      <i class="flaticon-mail">
-                      </i>
+                      <i class="flaticon-mail"></i>
                       <h6>Email</h6>
-                      <a href="{% url "home" %}">
-                        <span class="__cf_email__" data-cfemail="ed8588818182ad8e818480c38e8280">[email protected]</span>
-                      </a>
+                      <a href="mailto:despicable3@gmail.com">despicable3@gmail.com</a>
                     </li>
                     <li>
-                      <i class="flaticon-phone-call">
-                      </i>
+                      <i class="flaticon-phone-call"></i>
                       <h6>Phone</h6>
-                      <a href="{% url "home" %}">+1-3454-5678-77</a>
+                      <a href="tel:13454567877">+993-65-00-00-00</a>
                     </li>
                   </ul>
                 </div>
@@ -478,36 +423,29 @@
             <div class="row align-items-center">
               <div class="col-lg-8 col-md-6 col-sm-7">
                 <p class="copyright-text">
-                  <i class="ri-copyright-line">
-                  </i>
-                  Clim is proudly owned by
-                  <a href="{% url "home" %}">HiboTheme</a>
+                  <i class="ri-copyright-line"></i> With &hearts; by <a href="https://github.com/rampoe">Despicable3</a>
                 </p>
               </div>
               <div class="col-lg-4 col-md-6 col-sm-5">
                 <ul class="social-profile style1 list-style">
                   <li>
-                    <a href="{% url "home" %}">
-                      <i class="ri-facebook-fill">
-                      </i>
+                    <a href="https://facebook.com/">
+                      <i class="ri-facebook-fill"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="{% url "home" %}">
-                      <i class="ri-twitter-fill">
-                      </i>
+                    <a href="https://twitter.com/">
+                      <i class="ri-twitter-fill"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="{% url "home" %}">
-                      <i class="ri-instagram-line">
-                      </i>
+                    <a href="https://instagram.com/">
+                      <i class="ri-instagram-line"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="{% url "home" %}">
-                      <i class="ri-linkedin-fill">
-                      </i>
+                    <a href="https://linkedin.com/">
+                      <i class="ri-linkedin-fill"></i>
                     </a>
                   </li>
                 </ul>
@@ -527,20 +465,21 @@
     <!-- Back-to-top button End -->
     {% block javascript %}
       <!-- Link of JS files -->
-      <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-      <script src="js/jquery.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/form-validator.min.js"></script>
-      <script src="js/contact-form-script.js"></script>
-      <script src="js/aos.js"></script>
-      <script src="js/owl.carousel.min.js"></script>
-      <script src="js/owl-thumb.min.js"></script>
-      <script src="js/odometer.js"></script>
-      <script src="js/circle-progressbar.min.js"></script>
-      <script src="js/fancybox.js"></script>
-      <script src="js/jquery.appear.js"></script>
-      <script src="js/tweenmax.min.js"></script>
-      <script src="js/main.js"></script>
+      <script data-cfasync="false"
+              src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+      <script src="{% static "assets/js/jquery.min.js" %}"></script>
+      <script src="{% static "assets/js/bootstrap.bundle.min.js" %}"></script>
+      <script src="{% static "assets/js/form-validator.min.js" %}"></script>
+      <script src="{% static "assets/js/contact-form-script.js" %}"></script>
+      <script src="{% static "assets/js/aos.js" %}"></script>
+      <script src="{% static "assets/js/owl.carousel.min.js" %}"></script>
+      <script src="{% static "assets/js/owl-thumb.min.js" %}"></script>
+      <script src="{% static "assets/js/odometer.js" %}"></script>
+      <script src="{% static "assets/js/circle-progressbar.min.js" %}"></script>
+      <script src="{% static "assets/js/fancybox.js" %}"></script>
+      <script src="{% static "assets/js/jquery.appear.js" %}"></script>
+      <script src="{% static "assets/js/tweenmax.min.js" %}"></script>
+      <script src="{% static "assets/js/main.js" %}"></script>
     {% endblock javascript %}
   </body>
 </html>

@@ -1,12 +1,16 @@
 {% extends "_base.html" %}
 
 {% block content %}
-  <h2>Quizzes</h2>
-  <ul>
-    {% for quiz in quizzes %}
-      <li>
-        <a href="{% url 'quiz_detail' quiz.id %}">{{ quiz.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="hero-wrap container ptb-100">
+    <div class="hero-wrap">
+      <h2>Quizzes</h2>
+      <ul>
+        {% for quiz in quizzes %}
+          <li>
+            <a href="{% url 'quiz_detail' quiz.id %}">{{ quiz.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 {% endblock content %}
