@@ -8,6 +8,10 @@ class Article(models.Model):
     image = models.ImageField(upload_to="article_images/", blank=True, null=True)
     title = models.CharField(verbose_name=_("Title"), max_length=255)
     body = models.TextField(verbose_name=_("Body"))
+    pdf = models.FileField(upload_to="article_pdfs/")
+
+    def __str__(self):
+        return self.title
 
 
 class Quiz(models.Model):
