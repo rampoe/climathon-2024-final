@@ -1,446 +1,108 @@
+<!DOCTYPE html>
+
 {% load static %}
 {% load i18n %}
-
 {% get_current_language as LANGUAGE_CODE %}
 
-<!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}" dir="ltr">
-
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <meta name="viewport"
-          content="width=device-width, minimum-scale=1, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>
-      Despicable3 |
       {% block title %}
       {% endblock title %}
     </title>
 
-    <meta name="keywords" content="climate, action, green world, education">
-    <meta name="description" content="A dynamic climate education platform">
-    <meta name="author" content="Despicable 3">
+    <meta name="author" content="Rahman Begjanov">
+    <meta name="keywords" content="">
+    <meta name="description" content="" />
 
     {% block css %}
-      <!-- Links of CSS files -->
-      <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
-      <link rel="stylesheet" href="{% static "css/flaticon.css" %}">
-      <link rel="stylesheet" href="{% static "css/remixicon.css" %}">
-      <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
-      <link rel="stylesheet" href="{% static "css/owl-theme-default-min.css" %}">
-      <link rel="stylesheet" href="{% static "css/odometer.min.css" %}">
-      <link rel="stylesheet" href="{% static "css/fancybox.css" %}">
-      <link rel="stylesheet" href="{% static "css/aos.css" %}">
-      <link rel="stylesheet" href="{% static "css/style.css" %}">
-      <link rel="stylesheet" href="{% static "css/responsive.css" %}">
-      <link rel="stylesheet" href="{% static "css/dark-theme.css" %}">
-    {% endblock css %}
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            crossorigin="anonymous">
 
-    <!-- favicon -->
-    <link rel="icon" type="image/png" href="{% static "img/favicon.png" %}">
+      <link rel="stylesheet" href="{% static "css/base.css" %}">
+    {% endblock %}
   </head>
 
   <body>
-    <!--Preloader starts-->
-    <div class="loader js-preloader">
-      <div>
-        <!-- an empty div for preloader -->
-      </div>
-      <div>
-        <!-- an empty div for preloader -->
-      </div>
-      <div>
-        <!-- an empty div for preloader -->
-      </div>
-    </div>
-    <!--Preloader ends-->
+    <header class="p-3 mb-3 border-bottom">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/"
+             class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+            <svg class="bi me-2"
+                 width="40"
+                 height="32"
+                 role="img"
+                 aria-label="Bootstrap">
+              <use xlink:href="#bootstrap" />
+            </svg>
+          </a>
 
-    <!-- Theme Switcher Start -->
-    <div class="switch-theme-mode">
-      <label id="switch" class="switch">
-        <input type="checkbox" onchange="toggleTheme()" id="slider">
-        <span class="slider round"></span>
-      </label>
-    </div>
-    <!-- Theme Switcher End -->
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li>
+              <a href="{% url "home" %}" class="nav-link px-2 link-secondary">Home</a>
+            </li>
+            <li>
+              <a href="{% url "about" %}" class="nav-link px-2 link-dark">About</a>
+            </li>
+          </ul>
 
-    <!-- Page Wrapper Start -->
-    <div class="page-wrapper">
-
-      <!-- Header Section Start -->
-      <header class="header-wrap">
-        <div class="header-top">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-8 col-md-8">
-                <div class="header-top-left">
-                  <ul class="contact-info list-style">
-                    <li>
-                      <i class="flaticon-phone-call"></i>
-                      <a href="tel:666999888">+993-65-00-00-00</a>
-                    </li>
-                    <li>
-                      <i class="flaticon-email-2"></i>
-                      <a href="mailto:despicable3@gmail.com">despicable3@gmail.com</a>
-                    </li>
-                    <li>
-                      <i class="flaticon-pin"></i>
-                      <p>Carbon Training Center</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4">
-                <div class="header-top-right">
-                  <div class="select-lang d-flex">
-                    <img src="{% static "img/uk.png" %}" alt="" width="25" height="">
-                    <div class="navbar-option-item navbar-language dropdown language-option">
-                      <button class="dropdown-toggle"
-                              type="button"
-                              data-bs-toggle="dropdown"
-                              aria-haspopup="true"
-                              aria-expanded="false">
-                        <span class="lang-name"></span>
-                      </button>
-                      <div class="dropdown-menu language-dropdown-menu">
-                        <a class="dropdown-item" href="#">
-                          <img height="" width="" src="{% static "img/uk.png" %}" alt="flag">
-                          English
-                        </a>
-                        <a class="dropdown-item" href="#">
-                          <img height="" width="" src="{% static "img/china.png" %}" alt="flag">
-                          Russian
-                        </a>
-                        <a class="dropdown-item" href="#">
-                          <img height="" width="" src="{% static "img/uae.png" %}" alt="flag">
-                          Turkmen
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="dropdown text-end">
+            {% if user.is_authenticated %}
+              <a href="#"
+                 class="d-block link-dark text-decoration-none dropdown-toggle"
+                 data-bs-toggle="dropdown"
+                 aria-expanded="false">{{ user.email }}</a>
+              <ul class="dropdown-menu text-small">
+                <li>
+                  <a class="dropdown-item" href="{% url "account_change_password" %}">Change password</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url "account_logout" %}">Sign out</a>
+                </li>
+              </ul>
+            {% else %}
+              <form class="form-inline ml-auto">
+                <a href="{% url "account_login" %}" class="btn btn-outline-secondary">Log in</a>
+                <a href="{% url "account_signup" %}" class="btn btn-primary ml-2">Sign up</a>
+              </form>
+            {% endif %}
           </div>
         </div>
-        <div class="header-bottom py-3">
-          <div class="container">
-            <nav class="navbar navbar-expand-md navbar-light">
-              <a class="navbar-brand" href="{% url "home" %}">
-                <img height="" width="150" class="logo-light" src="{% static "img/logo-light.png" %}" alt="logo">
-                <img height="" width="" class="logo-dark" src="{% static "img/logo-white.png " %}" alt="logo">
-              </a>
-              <div class="collapse navbar-collapse main-menu-wrap"
-                   id="navbarSupportedContent">
-                <div class="menu-close d-lg-none">
-                  <a href="javascript:void(0)"> <i class="ri-close-line"></i></a>
-                </div>
-                <ul class="navbar-nav ms-auto">
-                  <li class="nav-item">
-                    <a href="{% url "home" %}" class="nav-link active">
-                      Home
-                      <i class="ri-add-line"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{% url "home" %}" class="nav-link">Articles</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{% url "home" %}" class="nav-link">Engagement</a>
-                  </li>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item">
-                      <a href="{% url "account_change_password" %}" class="nav-link">
-                        Change password
-                        <i class="ri-add-line"></i>
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li class="nav-item">
-                          <a href="{% url "home" %}" class="nav-link">Blog Grid</a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="{% url "home" %}" class="nav-link">Blog Left Sidebar</a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="{% url "home" %}" class="nav-link">Blog Right Sidebar</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a href="{% url "home" %}" class="nav-link">Game</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="{% url "home" %}" class="nav-link active">Donations</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="{% url "home" %}" class="nav-link">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="{% url "about" %}" class="nav-link">About Us</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          Profile
-                          <i class="ri-add-line"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li class="nav-item">
-                            <a href="{% url "account_change_password" %}" class="nav-link">
-                              Change password
-                              <i class="ri-add-line"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                              <li class="nav-item">
-                                <a href="{% url "home" %}" class="nav-link">Blog Grid</a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="{% url "home" %}" class="nav-link">Blog Left Sidebar</a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="{% url "home" %}" class="nav-link">Blog Right Sidebar</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li class="nav-item">
-                            <a href="{% url "account_logout" %}" class="nav-link">
-                              Log out
-                              <i class="ri-add-line"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                              <li class="nav-item">
-                                <a href="{% url "home" %}" class="nav-link">Blog Details No Sidebar</a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="{% url "home" %}" class="nav-link">Blog Details Left Sidebar</a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="{% url "home" %}" class="nav-link">Blog Details Right Sidebar</a>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
-                    {% else %}
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          Sign in
-                          <i class="ri-add-line"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li class="nav-item">
-                            <a href="{% url "account_change_password" %}" class="nav-link">
-                              Log in
-                              <i class="ri-add-line"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                              <li class="nav-item">
-                                <a href="{% url "home" %}" class="nav-link">Blog Grid</a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="{% url "home" %}" class="nav-link">Blog Left Sidebar</a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="{% url "home" %}" class="nav-link">Blog Right Sidebar</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li class="nav-item">
-                            <a href="{% url "account_logout" %}" class="nav-link">
-                              Sign up
-                              <i class="ri-add-line"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                              <li class="nav-item">
-                                <a href="{% url "home" %}" class="nav-link">Blog Details No Sidebar</a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="{% url "home" %}" class="nav-link">Blog Details Left Sidebar</a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="{% url "home" %}" class="nav-link">Blog Details Right Sidebar</a>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
-                    {% endif %}
-                  </ul>
-                </div>
-              </nav>
-              <div class="search-area">
-                <input type="search" placeholder="Search Here..">
-                <button type="submit">
-                  <i class="ri-search-line"></i>
-                </button>
-              </div>
-              <div class="mobile-bar-wrap">
-                <button class="searchbtn d-lg-none">
-                  <i class="ri-search-line"></i>
-                </button>
-                <div class="mobile-menu d-lg-none">
-                  <a href="javascript:void(0)"><i class="ri-menu-line"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
-        <!-- Header Section End -->
-
-        {% block content %}
-        {% endblock content %}
-
-        <!-- Footer Section Start -->
-        <footer class="footer-wrap">
-          <div class="footer-top">
-            <img height="" width="" src="{% static "img/footer-shape-2.png" %}" alt="Image" class="footer-shape-one moveHorizontal">
-            <img height="" width="" src="{% static "img/footer-shape-3.png" %}" alt="Image" class="footer-shape-four moveHorizontal">
-            <div class="container">
-              <div class="row pt-100 pb-75">
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 pe-xl-5">
-                  <div class="footer-widget">
-                    <a href="{% url "home" %}" class="footer-logo">
-                      <img height="" width="" src="{% static "img/logo-white.png " %}" alt="Image">
-                    </a>
-                    <p class="comp-desc">
-                      Lorem ipsum dolor sit amet consc tetur adicing elit. Dolor emque dicta molest enim beatae ame consequ atur tempo pretium auctor nam.
-                    </p>
-                    <div class="newsletter-form">
-                      <input type="email" placeholder="Email Address">
-                      <button type="button">Subscribe Now</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 ps-xl-5 ps-lg-4 ps-md-5">
-                  <div class="footer-widget">
-                    <h3 class="footer-widget-title">Explore</h3>
-                    <ul class="footer-menu list-style">
-                      <li>
-                        <a href="{% url "home" %}">Fundraise For Health</a>
-                      </li>
-                      <li>
-                        <a href="{% url "home" %}">Shelter For Refuge</a>
-                      </li>
-                      <li>
-                        <a href="{% url "home" %}">Adopt Orphan Child</a>
-                      </li>
-                      <li>
-                        <a href="{% url "home" %}">Education For Poor</a>
-                      </li>
-                      <li>
-                        <a href="{% url "home" %}">Clean Water Project</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 ">
-                  <div class="footer-widget">
-                    <h3 class="footer-widget-title">Other Pages</h3>
-                    <ul class="footer-menu list-style">
-                      <li>
-                        <a href="{% url "about" %}">About us</a>
-                      </li>
-                      <li>
-                        <a href="{% url "home" %}">Our Team</a>
-                      </li>
-                      <li>
-                        <a href="{% url "home" %}">Recent Events</a>
-                      </li>
-                      <li>
-                        <a href="{% url "home" %}">Make Donation</a>
-                      </li>
-                      <li>
-                        <a href="{% url "home" %}">Get In Touch</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 ps-md-5">
-                  <div class="footer-widget">
-                    <h3 class="footer-widget-title">Official Info</h3>
-                    <ul class="contact-info list-style">
-                      <li>
-                        <i class="flaticon-pin"></i>
-                        <h6>Location</h6>
-                        <p>Carbon Training Center</p>
-                      </li>
-                      <li>
-                        <i class="flaticon-mail"></i>
-                        <h6>Email</h6>
-                        <a href="mailto:despicable3@gmail.com">despicable3@gmail.com</a>
-                      </li>
-                      <li>
-                        <i class="flaticon-phone-call"></i>
-                        <h6>Phone</h6>
-                        <a href="tel:13454567877">+993-62-17-23-37</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="footer-bottom">
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-lg-8 col-md-6 col-sm-7">
-                  <p class="copyright-text">
-                    <i class="ri-copyright-line"></i> With &hearts; by <a href="https://github.com/rampoe">Despicable3</a>
-                  </p>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-5">
-                  <ul class="social-profile style1 list-style">
-                    <li>
-                      <a href="https://facebook.com/">
-                        <i class="ri-facebook-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://twitter.com/">
-                        <i class="ri-twitter-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://instagram.com/">
-                        <i class="ri-instagram-line"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://linkedin.com/">
-                        <i class="ri-linkedin-fill"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
-        <!-- Footer Section End -->
-
       </div>
-      <!-- Page Wrapper End -->
+    </header>
 
-      {% block javascript %}
-        <!-- Links of JS files -->
-        <script data-cfasync="false"
-                src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-        <script src="{% static "js/jquery.min.js " %}"></script>
-        <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
-        <script src="{% static "js/form-validator.min.js" %}"></script>
-        <script src="{% static "js/contact-form-script.js" %}"></script>
-        <script src="{% static "js/aos.js" %}"></script>
-        <script src="{% static "js/owl.carousel.min.js" %}"></script>
-        <script src="{% static "js/owl-thumb.min.js" %}"></script>
-        <script src="{% static "js/odometer.js" %}"></script>
-        <script src="{% static "js/circle-progressbar.min.js" %}"></script>
-        <script src="{% static "js/fancybox.js" %}"></script>
-        <script src="{% static "js/jquery.appear.js " %}"></script>
-        <script src="{% static "js/tweenmax.min.js " %}"></script>
-        <script src="{% static "js/main.js" %}"></script>
-      {% endblock javascript %}
+    <div class="container">
+      {% block content %}
+        <p>Default content...</p>
+      {% endblock content %}
+    </div>
 
-    </body>
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Footer...</span>
+      </div>
+    </footer>
 
-  </html>
+    {% block javascript %}
+      <!-- Bootstrap JavaScript -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+              integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+              crossorigin="anonymous"></script>
+
+      <!-- Project JS -->
+      <script src="{% static "js/base.js" %}"></script>
+
+    {% endblock javascript %}
+  </body>
+</html>
