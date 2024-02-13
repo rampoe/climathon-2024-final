@@ -17,7 +17,7 @@
             We are an educational platform dedicated to spreading knowledge about climate change and the environment.
             Our mission is to increase awareness and understanding of environmental issues and promote practical solutions for a more sustainable future.
           </p>
-          <a class="btn style2" href="{% url "home" %}">GET STARTED</a>
+          <a class="btn style2" href="{% url "article_list" %}">GET STARTED</a>
         </div>
       </div>
     </div>
@@ -120,7 +120,7 @@
                 Online Resources
               </li>
             </ul>
-            <a class="btn style2" href="{% url "home" %}">Find Out More</a>
+            <a class="btn style2" href="{% url "article_list" %}">Find Out More</a>
           </div>
         </div>
       </div>
@@ -151,7 +151,7 @@
           </div>
           <div class="project-info">
             <h3>
-              <a href="{% url "home" %}">Stop Cutting Down Trees</a>
+              <a href="http://localhost:8000/article/4/">Stop Cutting Down Trees</a>
             </h3>
             <p>
               By donating to our cause, you can actively contribute to the urgent mission of stopping the unnecessary cutting down of trees. Trees play a vital role in maintaining the delicate balance of our ecosystems, providing us with clean air, regulating the climate, and serving as habitats for countless species.
@@ -191,7 +191,7 @@
           </div>
           <div class="project-info">
             <h3>
-              <a href="{% url "home" %}">Plant a Tree - Nurture Life, Restore Balance!</a>
+              <a href="http://localhost:8000/article/4/">Plant a Tree - Nurture Life, Restore Balance!</a>
             </h3>
             <p>
               Your generous donation will directly support our tree planting initiatives, which include selecting appropriate species, ensuring proper care and maintenance, and creating sustainable forests that benefit both humans and nature. Together, we can restore the natural balance and create a greener, more sustainable future for generations to come.
@@ -231,7 +231,7 @@
           </div>
           <div class="project-info">
             <h3>
-              <a href="{% url "home" %}">Recycling Daily Waste</a>
+              <a href="http://localhost:8000/article/4/">Recycling Daily Waste</a>
             </h3>
             <p>
               Lorem ipsum dolor sit amet cons ectadic elite soli tudin consec tetur netusdu ame ultrices lectus dolor sit amet egestas.
@@ -271,7 +271,7 @@
           </div>
           <div class="project-info">
             <h3>
-              <a href="{% url "home" %}">Reduce Greenhouse Gas</a>
+              <a href="http://localhost:8000/article/4/">Reduce Greenhouse Gas</a>
             </h3>
             <p>
               Lorem ipsum dolor sit amet cons ectadic elite soli tudin consec tetur netusdu ame ultrices lectus dolor sit amet egestas.
@@ -311,7 +311,7 @@
           </div>
           <div class="project-info">
             <h3>
-              <a href="{% url "home" %}">Save The Wildlife</a>
+              <a href="http://localhost:8000/article/4/">Save The Wildlife</a>
             </h3>
             <p>
               Lorem ipsum dolor sit amet cons ectadic elite soli tudin consec tetur netusdu ame ultrices lectus dolor sit amet egestas.
@@ -351,7 +351,7 @@
           </div>
           <div class="project-info">
             <h3>
-              <a href="{% url "home" %}">Reduce Air Pollution</a>
+              <a href="http://localhost:8000/article/4/">Reduce Air Pollution</a>
             </h3>
             <p>
               Lorem ipsum dolor sit amet cons ectadic elite soli tudin consec tetur netusdu ame ultrices lectus dolor sit amet egestas.
@@ -497,7 +497,7 @@
             </div>
             <div class="event-info">
               <h3>
-                <a href="{% url "home" %}">Developing Low Carbon</a>
+                <a href="http://localhost:8000/article/4/">Developing Low Carbon</a>
               </h3>
               <ul class="event-metainfo list-style">
                 <li>
@@ -530,7 +530,7 @@
             </div>
             <div class="event-info">
               <h3>
-                <a href="{% url "home" %}">Encourage For Green City</a>
+                <a href="http://localhost:8000/article/4/">Encourage For Green City</a>
               </h3>
               <ul class="event-metainfo list-style">
                 <li>
@@ -563,7 +563,7 @@
             </div>
             <div class="event-info">
               <h3>
-                <a href="{% url "home" %}">Stop Deforestation</a>
+                <a href="http://localhost:8000/article/4/">Stop Deforestation</a>
               </h3>
               <ul class="event-metainfo list-style">
                 <li>
@@ -596,7 +596,7 @@
             </div>
             <div class="event-info">
               <h3>
-                <a href="{% url "home" %}">Reduce CFC Gas</a>
+                <a href="http://localhost:8000/article/4/">Reduce CFC Gas</a>
               </h3>
               <ul class="event-metainfo list-style">
                 <li>
@@ -813,7 +813,9 @@
           <button type="button">Other</button>
         </li>
       </ul>
-      <a href="{% url "donation" %}"><button class="btn style2" type="submit">Donate Now</button></a>
+      <a href="{% url "donation" %}">
+        <button class="btn style2" type="submit">Donate Now</button>
+      </a>
     </div>
   </div>
   <!-- CTA Section Start -->
